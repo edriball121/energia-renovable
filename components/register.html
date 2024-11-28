@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/register.css">
+    <title>Registro</title>
+</head>
+
+<body>
+    <section class="form-register">
+        <h4>Formulario de registro</h4>
+        <form id="register-form">
+            <input class="controls" type="text" name="Nombre" id="username" placeholder="Ingrese su Nombre">
+            <input class="controls" type="email" name="Correo" id="email" placeholder="Ingrese su correo">
+            <input class="controls" type="password" name="contraseña" id="password" placeholder="Ingrese su contraseña">
+            <div>
+                <p> Estoy de acuerdo con <a href="#"> Terminos y Condiciones </a></p>
+            </div>
+            <div>
+                <button id="button" type="submit">Registrar</button>
+            </div>
+            <div>
+                <p><a href="#">¿Quieres recibir más información?</a></p>
+            </div>
+            <div>
+                <p>Ya estas registrado<a href="../components/login.html"> Iniciar sesión</a></p>
+            </div>
+        </form>
+    </section>
+
+    <div id="error-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <h2>Error</h2>
+            <p>Usuario invalido o ya registrado</p>
+            <button id="accept-btn" class="accept-btn">Aceptar</button>
+        </div>
+    </div>
+
+    <script src="../js/login.js"></script>
+</body>
+
+</html>

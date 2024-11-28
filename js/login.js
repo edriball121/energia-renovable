@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 users[username] = password;
                 alert('¡Registro exitoso! Ahora puedes iniciar sesión.');
-                window.location.href = '/components/login-html';
+                window.location.href = '/components/login.html';
                 usernameInput.value = '';
                 passwordInput.value = '';
             }

@@ -1,46 +1,64 @@
-const form = document.getElementById('login-form');
-const usernameInput = document.getElementById('username');
-const passwordInput = document.getElementById('password');
-const modal = document.getElementById('error-modal');
-const closeModal = document.getElementById('close-modal');
-const acceptBtn = document.getElementById('accept-btn');
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form'); // Seleccionamos el formulario
+    const usernameInput = document.getElementById('username') || document.getElementById('nombre');
+    const passwordInput = document.getElementById('password') || document.getElementById('contraseña');
+    const modal = document.getElementById('error-modal');
+    const closeModal = document.getElementById('close-modal');
+    const acceptBtn = document.getElementById('accept-btn');
 
-const users = {
-    'usuario1': 'contraseña1',
-    'usuario2': 'contraseña2'
-};
+    const users = {
+        'admin': 'admin',
+        'consulta': 'Prueba'
+    };
 
-function showErrorModal() {
-    modal.style.display = 'flex';
-}
+    function showErrorModal() {
+        modal.style.display = 'flex';
+    }
 
-closeModal.addEventListener('click', () => {
-    modal.style.display = 'none';
-});
-
-window.addEventListener('click', (event) => {
-    if (event.target === modal) {
+    closeModal.addEventListener('click', () => {
         modal.style.display = 'none';
-    }
-});
+    });
 
-acceptBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-});
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 
-// Validación del formulario
-form.addEventListener('submit', function (event) {
-    event.preventDefault();
+    acceptBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
 
-    const username = usernameInput.value;
-    const password = passwordInput.value;
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
 
-    if (users[username] && users[username] === password) {
-        window.location.href = '/index.html';
-    } else {
-        showErrorModal();
+        const username = usernameInput.value;
+        const password = passwordInput.value;
 
-        usernameInput.value = '';
-        passwordInput.value = '';
-    }
+        console.log(username,password)
+
+        const isRegister = form.id === 'register-form';
+
+        if (isRegister) {
+            if (users[username]) {
+                showErrorModal();
+                usernameInput.value = '';
+                passwordInput.value = '';
+            } else {
+                users[username] = password;
+                alert('¡Registro exitoso! Ahora puedes iniciar sesión.');
+                window.location.href = '/components/login-html';
+                usernameInput.value = '';
+                passwordInput.value = '';
+            }
+        } else {
+            if (users[username] && users[username] === password) {
+                window.location.href = '/index.html';
+            } else {
+                showErrorModal();
+                usernameInput.value = '';
+                passwordInput.value = '';
+            }
+        }
+    });
 });

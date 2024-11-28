@@ -1,0 +1,236 @@
+:root {
+    --primary-color: #2ecc71;
+    --secondary-color: #3498db;
+    --font-color: #333;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    height: auto;
+}
+
+header {
+    text-align: center;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 1rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem;
+}
+
+nav ul li a {
+    color: white;
+    font-size: large;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+a:hover {
+    color: #020202;
+    font-weight: bold;
+}
+
+#ini-nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 1rem;
+}
+
+#buttons {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    margin: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+#solar {
+    background-color: #f4a261;
+}
+
+#eolica {
+    background-color: #0076b698;
+}
+
+#hidraulica {
+    background-color: #181a1a7a;
+}
+
+#biomasa {
+    background-color: #13988b;
+}
+
+#content {
+    text-align: center;
+    color: #333;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+#content h2,
+#content p {
+    margin: 0.5rem 0;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+#description {
+    font-size: 2rem;
+    text-align: justify;
+}
+
+#content video {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: rgb(255, 255, 255);
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    min-height: 60vh;
+}
+
+.media {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.media video {
+    width: 80%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+}
+
+#image {
+    width: 40%;
+}
+
+#description {
+    width: 60%;
+}
+
+#image img {
+    width: 640px;
+    height: 440px;
+}
+
+#description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+        padding: 10px;
+        display: block;
+    }
+
+    #buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 1rem;
+    }
+
+    .btn {
+        width: 90%;
+        margin: 0 auto;
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    #content {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #image {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    #description {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    #image img {
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .media video {
+        width: 100%;
+        height: auto;
+    }
+
+    footer {
+        padding: 0.5rem;
+        font-size: 14px;
+    }
+}

@@ -28,18 +28,15 @@ Colombia,2020,30.772787
 Colombia,2021,33.02041
 `;
 
-// Función para procesar el CSV
 function parseCSV(data) {
   const rows = data.trim().split('\n').map(row => row.split(','));
   return rows;
 }
 
-// Función para generar la tabla en HTML
 function generateTable() {
   const data = parseCSV(csvData);
   const table = document.getElementById('data-table');
 
-  // Crear encabezados de la tabla
   const headers = data[0];
   const thead = table.querySelector('thead');
   const headerRow = document.createElement('tr');
@@ -51,7 +48,6 @@ function generateTable() {
   });
   thead.appendChild(headerRow);
 
-  // Crear filas de datos de la tabla
   const tbody = table.querySelector('tbody');
   data.slice(1).forEach(row => {
       const tr = document.createElement('tr');
@@ -64,7 +60,6 @@ function generateTable() {
   });
 }
 
-// Llama a la función para generar la tabla
 generateTable();
 document.addEventListener("DOMContentLoaded", () => {
   console.log("El sitio está completamente cargado.");
